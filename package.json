@@ -1,11 +1,19 @@
 {
   "name": "irp-slot-notifier",
   "version": "1.0.0",
-  "description": "It notifies when there is an available slot for making an appointment at the Burgh Quay Registration Office",
-  "main": "index.js",
+  "description": "It notifies when there is an available slot for making an appointment for first time registration at the Burgh Quay Registration Office, Dublin.",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "getenv": "^1.0.0",
+    "module-alias": "^2.2.2",
+    "node-cron": "^2.0.3",
+    "node-fetch": "^2.6.0",
+    "twilio": "^3.49.0"
+  }
 }
