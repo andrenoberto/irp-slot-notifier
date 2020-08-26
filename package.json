@@ -1,0 +1,11 @@
+{
+  "name": "irp-slot-notifier",
+  "version": "1.0.0",
+  "description": "It notifies when there is an available slot for making an appointment at the Burgh Quay Registration Office",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
