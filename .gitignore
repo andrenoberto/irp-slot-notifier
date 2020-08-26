@@ -1,5 +1,6 @@
 ### Node ###
 # Logs
+logcertfile
 logs
 *.log
 npm-debug.log*
