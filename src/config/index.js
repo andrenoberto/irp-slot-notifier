@@ -1,6 +1,12 @@
 require('dotenv').config();
 const getEnv = require('getenv');
 
+const general = {
+  cronExpression: getEnv.string('CRON_EXPRESSION'),
+  feedbackHours: getEnv.array('FEEDBACK_HOURS', 'int'),
+  timezone: getEnv.string('TIMEZONE'),
+};
+
 const registrationOffice = {
   action: getEnv.string('REGISTRATION_OFFICE_API_ACTION'),
   address: getEnv.string('REGISTRATION_OFFICE_ADDRESS'),
@@ -18,6 +24,7 @@ const twilio = {
 };
 
 module.exports = {
+  general,
   registrationOffice,
   twilio,
 };
