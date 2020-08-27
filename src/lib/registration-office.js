@@ -2,12 +2,13 @@ const https = require('https')
 const fetch = require('node-fetch');
 const { URLSearchParams } = require('url');
 
-const { registrationOffice, twilio } = require('@config');
+const { general, registrationOffice, twilio } = require('@config');
 const twilioClient = require('@clients/twilio');
+const { getLocalDate, getLocalDateString } = require('@lib/date');
 
 const MESSAGES = {
-  empty: () => `There are no available slots at the Burgh Quay Registration Office at the moment. We'll keep you up to date as soon as we find an available slot!`,
-  success: url => `There might an available slot at the Burgh Quay Registration Office. Check it out and make your appointment: ${url}`,
+  empty: () => `There are no available slots at the Burgh Quay Registration Office at the moment!\n${getLocalDateString()}`,
+  success: url => `We found an slot at the Burgh Quay Registration Office.\nCheck it out: ${url}\n${getLocalDateString()}`,
 };
 
 const findAppointmentsAndNotify = async () => {
@@ -27,10 +28,10 @@ const findAppointmentsAndNotify = async () => {
 };
 
 const _isFeedbackTime = () => {
-  const now = new Date();
+  const now = getLocalDate();
   const [hours, minutes] = [now.getHours(), now.getMinutes()];
 
-  return hours === 18 && minutes === 00;
+  return general.feedbackHours.some(feedbackHour => feedbackHour === hours) && minutes === 00;
 };
 
 const _hasAvailableSlot = async () => {
