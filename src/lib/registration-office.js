@@ -6,7 +6,7 @@ const { registrationOffice, twilio } = require('@config');
 const twilioClient = require('@clients/twilio');
 
 const MESSAGES = {
-  empty: () => `There are no available slots at the Burgh Quay Registration Office at the moment. We'll keep you up to date as soon as we get an available slot!`,
+  empty: () => `There are no available slots at the Burgh Quay Registration Office at the moment. We'll keep you up to date as soon as we find an available slot!`,
   success: url => `There might an available slot at the Burgh Quay Registration Office. Check it out and make your appointment: ${url}`,
 };
 
