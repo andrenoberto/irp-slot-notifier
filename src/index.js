@@ -6,8 +6,8 @@ moduleAlias.addAliases({
   '@src': __dirname,
 });
 
+const config = require('@config');
 const { findAppointmentsAndNotify  } = require('@lib/registration-office');
 const schedule = require('@lib/toolkit/schedule');
 
-const cronExpression = '* * * * *';
-schedule(cronExpression, findAppointmentsAndNotify);
+schedule(config.general.cronExpression, findAppointmentsAndNotify);
