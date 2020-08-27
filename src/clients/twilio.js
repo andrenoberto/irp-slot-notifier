@@ -7,8 +7,8 @@ const _client = twilio(config.twilio.accountSid, config.twilio.authToken);
 const sendMessage = async (to, message) => {
   try {
     const result = await _client.messages.create({
-      from: config.twilio.senderNumber,
       body: message,
+      messagingServiceSid: config.twilio.messagingServiceSid,
       to,
     });
   } catch (err) {

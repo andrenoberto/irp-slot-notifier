@@ -13,8 +13,8 @@ const registrationOffice = {
 const twilio = {
   accountSid: getEnv.string('TWILIO_ACCOUNT_SID'),
   authToken: getEnv.string('TWILIO_AUTH_TOKEN'),
+  messagingServiceSid: getEnv.string('TWILIO_MESSAGING_SERVICE_SID'),
   receiverNumber: getEnv.string('TWILIO_RECEIVER_NUMBER'),
-  senderNumber: getEnv.string('TWILIO_SENDER_NUMBER'),
 };
 
 module.exports = {
