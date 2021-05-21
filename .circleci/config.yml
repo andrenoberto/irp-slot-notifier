@@ -1,21 +1,13 @@
 version: 2.1
 
 jobs:
-  print-hello:
+  print-project-info:
     docker:
       - image: circleci/node:14.7
     steps:
-      - run: echo "hello"
-  print-world:
-    docker:
-      - image: circleci/node:14.7
-    steps:
-      - run: echo "world"
+      - run: echo "Project Owner:" $PROJECT_OWNER
 
 workflows:
   hello-world:
     jobs:
-      - print-hello
-      - print-world:
-          requires:
-            - print-hello
+      - print-project-info
